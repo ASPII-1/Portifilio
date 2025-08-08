@@ -1,0 +1,13 @@
+{
+  "name": "yahoo-finance-demo",
+  "version": "1.0.0",
+  "description": "Yahoo Finance API Demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "yahoo-finance2": "^2.4.11"
+  }
+}
