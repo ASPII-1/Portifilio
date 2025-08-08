@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yahoo Finance API Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Stock Analyzer</h1>
+      <p class="subtitle">Comprehensive insights, data, and performance analysis for every stock</p>
+
+    </header>
+    
+    <div class="app-container">
+      <div class="panel">
+        <h2 class="panel-title">Search Stocks</h2>
+        <div class="form-group">
+          <input type="text" id="searchQuery" placeholder="e.g. Apple or AAPL">
+        </div>
+        <button class="btn" id="searchBtn">Search</button>
+        
+        <div class="results">
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        
+        <!-- NEWS SECTION ADDED HERE -->
+        <div class="news-container" id="newsContainer">
+          <h3 class="news-title">Latest News</h3>
+          <div class="news-results" id="newsResults"></div>
+        </div>
+      </div>
+      
+      <div class="panel">
+        <h2 class="panel-title">Stock Data</h2>
+        <div class="form-group">
+          <input type="text" id="symbol" placeholder="e.g. AAPL">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate">
+          </div>
+          <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interval">Interval</label>
+          <select id="interval">
+            <option value="1d">Daily</option>
+            <option value="1wk">Weekly</option>
+            <option value="1mo">Monthly</option>
+          </select>
+        </div>
+        <div class="actions">
+          <button class="btn" id="getHistoricalBtn">Get Historical Data</button>
+          <button class="btn" id="getQuoteBtn">Get Current Quote</button>
+        </div>
+        
+        <div class="results">
+          <div id="historicalResults"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stock-chart">
+      <h2 class="panel-title">Price Chart</h2>
+      <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Powered by Yahoo Finance API | Data may be delayed by 15 minutes</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
